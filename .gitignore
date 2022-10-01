@@ -1,0 +1,80 @@
+# Config file for defining vars
+config.py 
+
+*.pyc
+
+**env*/
+
+*.svg
+
+*.DS_Store
+
+*.pdf
+
+# Binary/Non-text files
+*.exe
+*.zip
+*.doc
+*.docx
+*.xlsx
+*.xlsm
+
+## GIS files
+*.mxd
+*.aprx
+*.ags
+### Toolboxes
+*.tbx
+### Shapefiles
+*.dbf
+*.prj
+*.sbn
+*.sbx
+*.shp
+*.shx
+# Raster files
+*.tif
+*.img
+*.adf
+*.ovr
+*.tif.ovr
+*.rrd
+# Other binaries (https://pro.arcgis.com/en/pro-app/latest/help/projects/supported-data-types-and-items.htm) 
+*.style
+*.stylx
+*.lyr
+*.lyrx
+*.mapx
+*.lpk
+*.lpkx
+*.pagx
+*.mpk
+*.mpkx
+*.dir
+*.nit
+*.dll
+*.hrz
+### GDB
+*.gdb
+### Locks
+*.lock
+### ArcGIS Pro project paths not needed
+.pyHistory
+*.aprx.xml
+.backups
+BackUps
+.xml
+.tfw
+
+# ImportLog # This folder is optional for ignoring since it’s only XML
+Index
+RasterFunctionTemplates
+
+# paths unique to this project
+BackUp
+Errors_history.py
+all_pip_installed_modules_on_computer.txt
+
+
+
+
