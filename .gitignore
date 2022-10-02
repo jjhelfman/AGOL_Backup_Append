@@ -72,7 +72,8 @@ RasterFunctionTemplates
 
 # paths unique to this project
 BackUp
-Errors_history.py
+Media
+Errors_and_history.py
 all_pip_installed_modules_on_computer.txt
 
 
