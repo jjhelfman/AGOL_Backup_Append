@@ -4,7 +4,7 @@
 
 1. backup_items.py is for backing up your typical data from AGOL. The script first gets a list of all items owned by you, the user. It exports all Feature Services as date-stamped File Geodatabases. Then, it checks for existing downloadable file types, including File Geodatabase, CSV, KML, KML Collection, Shapefile, Pro Map, Map Document, Map Package, Map Template, Layer, and Layer Package. The script does not check for Story Maps, Web Maps, Web Mapping Apps, Scene Layers or other items. All of the newly converted File Geodatabases and existing files are then downloaded to a new date-stamped backup folder in the current working directory. 
 
-2. append_csv.py appends a specified CSV file to a feature service/layer in AGOL. 
+2. The append_csv scripts append a specified CSV file to a feature service/layer in AGOL. To publish line or polygon geometry you will need to use a different file format like a shapefile, File Geodatabase or GeoJson. If you need to use a CSV file for attributes, you may want to consider creating the polygon features from one of the above formats and use the Join tools to add the CSV data to the geometry.
 
 ## Instructions
 
@@ -14,10 +14,13 @@
     - Note:
         > The AGOL username is case sensitive. The password input appears blank. 
         > Make sure to exclude quotation marks from the folder path.     
-4. append_csv.py asks for the source CSV's location and the feature layer's URL, including the numerical Layer ID at the end (i.e. https://services8.arcgis.com/exgR4BNI38IIwXOt/arcgis/rest/services/Preserves_FeatureToPoint/FeatureServer/0). Do not include quotation marks here.
+4. When publishing to AGOL from a CSV file, the result will be point geometry, so make sure the CSV source file has a latitude and longitude (decimal degrees) in each row. 
+5. The append_csv.py script is a developer-friendly script that asks for the source CSV's location and the feature layer's URL, including the numerical Layer ID at the end (i.e. https://services8.arcgis.com/exgR4BNI38IIwXOt/arcgis/rest/services/Preserves_FeatureToPoint/FeatureServer/0). Do not include quotation marks here.
     - Update the following:
         > The item_properties parameter in add_csv()'s gis.content.add() call.
         > The field_mappings and append_fields paramaters in the append_to_layer()'s feature_layer.append() call.
+        > Comment out the item_csv.delete() call as needed. 
+6. The append_csv_user_input.py script is more user-friendly, as it asks for the CSV's item properties and automatically defines the append's field parameters. The item_csv.delete() call can be commented out if you'd like to keep the CSV on AGOL.
 
 ## Sources
 
