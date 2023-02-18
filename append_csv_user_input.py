@@ -52,7 +52,8 @@ def append_to_layer(gis, layer_url, item_csv, csv_fields):
         # Get list of feature layer's fields
         feat_set = feature_layer.query(where="OBJECTID=1")
         feat = feat_set.features[0]
-        layer_fields1 = [x.lower() for x in feat.fields]
+        layer_fields = feat.fields
+        layer_fields1 = [x.lower() for x in layer_fields]
         csv_fields1 = [y.lower() for y in csv_fields]
         for z in csv_fields1:
             if z in layer_fields1:
@@ -68,7 +69,7 @@ def append_to_layer(gis, layer_url, item_csv, csv_fields):
                             skip_updates=False,
                             use_globalids=False,
                             update_geometry=True,
-                            append_fields=csv_fields,
+                            append_fields=layer_fields,
                             rollback=True,
                             skip_inserts=False)
         print(f"Successfully appended to {str(feature_layer)} in {str(gis)}")
