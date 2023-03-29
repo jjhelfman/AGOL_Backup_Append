@@ -1,3 +1,5 @@
+You can copy lines directly from here and paste into the ArcGIS Python window or scipt tool properties: 
+
 # Appending/copying records:
 import arcpy
 
