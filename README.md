@@ -29,5 +29,6 @@
 3. https://developers.arcgis.com/rest/users-groups-and-items/item.htm
 4. https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm
 5. https://support.esri.com/en/technical-article/000028111
-6. For extracting data from ArcGIS Server map services, see https://support.esri.com/en/technical-article/000019645 
+6. For cloning content (and maintaining folder structure), see https://developers.arcgis.com/python/samples/clone-portal-users-groups-and-content-rn/#copy-items. Folders are retrieved from `<source item>.<users><username>.folders`, which gets a list of the user's folders as dictionaries (with id, title and date keys).
+7. For extracting data from ArcGIS Server map services, see https://support.esri.com/en/technical-article/000019645 
 

@@ -13,20 +13,29 @@ all_items = gis.content.search(
     sort_order="desc",
 )
 items_list = []
-types_list = [
+types_list = frozenset([
     "File Geodatabase",
     "CSV",
     "Image",
     "KML",
     "KML Collection",
-    "Shapefile",
-    "Pro Map",
+    "Layer",
+    "Layer Package",
+    "Locator Package",
     "Map Document",
     "Map Package",
     "Map Template",
-    "Layer",
-    "Layer Package",
-]
+    "Microsoft Excel",
+    "Microsoft Powerpoint",
+    "Microsoft Word",
+    "Mobile Map Package",
+    "PDF",
+    "Pro Map",
+    "Scene Package",
+    "Shapefile",
+    "Tile Package",
+    "Vector Tile Package"
+])
 
 
 def list_and_export(all_items, items_list, types_list):
@@ -63,6 +72,8 @@ def download(items_list):
         try:
             print("Downloading " + item.title)
             item.download(backup_directory)
+            item.download_thumbnail(backup_directory)
+            item.download_metadata(backup_directory)
             print("Successfully downloaded " + item.title
                   + " to " + backup_directory)
         except Exception as e:
