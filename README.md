@@ -2,7 +2,8 @@
 
 ## Scripts 
 
-1. backup_items.py is for backing up your typical data from AGOL. The script first gets a list of all items owned by you, the user. It exports all Feature Services as date-stamped File Geodatabases. Then, it checks for existing downloadable file types, including File Geodatabase, CSV, KML, KML Collection, Shapefile, Pro Map, Map Document, Map Package, Map Template, Layer, and Layer Package. The script does not check for Story Maps, Web Maps, Web Mapping Apps, Scene Layers or other items. All of the newly converted File Geodatabases and existing files are then downloaded to a new date-stamped backup folder in the current working directory. 
+1. backup_items.py is for backing up your typical data from AGOL. The script first gets a list of all items owned by you, the user. The JSON, metadata and thumbnail of every item is downloaded. All Feature Services are then exported as date-stamped File Geodatabases. The script now checks for existing downloadable file types, including File Geodatabase, CSV, KML, KML Collection, Shapefile, Pro Map, Map Document, Map Package, Map Template, Layer, and Layer Package. All of the newly converted File Geodatabases and existing files are downloaded to a new date-stamped backup folder in the current working directory. 
+    > Note: Always consider exporting items like Story Maps, Web Maps, Web Mapping Apps, and Scene Layers as PDFs in addition to downloading the JSON (the more documentation, the better, since many items aren't exportable).
 
 2. The append_csv scripts append a specified CSV file to a feature service/layer in AGOL. To publish line or polygon geometry you will need to use a different file format like a shapefile, File Geodatabase or GeoJson. If you need to use a CSV file for attributes, you may want to consider creating the polygon features from one of the above formats and use the Join tools to add the CSV data to the geometry.
 
